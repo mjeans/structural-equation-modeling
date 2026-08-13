@@ -1,0 +1,31 @@
+name: Validate structural equation modeling project
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "release"
+      - name: Install lavaan
+        run: Rscript -e 'install.packages("lavaan", repos = "https://cloud.r-project.org")'
+      - name: Run end-to-end SEM workflow
+        run: make all
+      - name: Check required outputs
+        run: |
+          test -s outputs/cfa_fit_indices.csv
+          test -s outputs/measurement_invariance.csv
+          test -s outputs/sem_fit_indices.csv
+          test -s outputs/structural_paths.csv
+          test -s outputs/indirect_effects.csv
+          test -s outputs/residual_variances.csv
