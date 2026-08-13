@@ -17,6 +17,19 @@ The workflow separates that question into two stages:
 1. **Measurement:** Do 11 survey indicators represent three distinct latent constructs, and do the loadings and intercepts operate similarly across grade bands?
 2. **Structure:** Are support, engagement, confidence, and follow-up achievement connected through the prespecified direct and indirect pathways?
 
+## Verified reference results
+
+GitHub Actions regenerates the complete 2,400-record dataset and executes every model and test. The validated reference run produced:
+
+| Analysis | CFI | TLI | RMSEA | SRMR |
+|---|---:|---:|---:|---:|
+| Three-factor pooled CFA | 0.998 | 0.997 | 0.015 | 0.012 |
+| Structural equation model | 0.998 | 0.998 | 0.013 | 0.015 |
+
+The scalar-invariance step changed CFI and RMSEA by less than 0.001. The serial indirect association from support through engagement and confidence to follow-up achievement was 1.184 (`p < .001`). Diagnostics examined 17 residual variances, found no negative variances, and retained one modification index above 10 for transparent review rather than automatically respecifying the model.
+
+The excellent fit is expected because the synthetic data were generated from the prespecified structure. It demonstrates correct implementation and recovery under known conditions; it is not evidence that comparable fit should be expected in real data.
+
 ## What the project demonstrates
 
 - Three-factor confirmatory factor analysis with robust maximum likelihood
