@@ -71,9 +71,11 @@ sem_fit <- sem(
   missing = "fiml",
   meanstructure = TRUE,
   std.lv = TRUE,
-  fixed.x = FALSE
+  fixed.x = TRUE
 )
 stopifnot(lavInspect(sem_fit, "converged"))
+stopifnot(!anyNA(test_data_one[c("baseline_z", "high_school")]),
+          min(eigen(lavInspect(sem_fit, "vcov"), symmetric = TRUE)$values) > 0)
 stopifnot(fitMeasures(sem_fit, "cfi.scaled") > 0.95)
 stopifnot(fitMeasures(sem_fit, "rmsea.scaled") < 0.06)
 

@@ -1,0 +1,13 @@
+"lhs","op","rhs","label","est","se","z","pvalue","ci.lower","ci.upper","std.all"
+"engagement","~","support","a",0.773,0.034,22.727,0,0.706,0.839,0.592
+"engagement","~","baseline_z","baseline_to_engagement",0.308,0.025,12.269,0,0.259,0.357,0.234
+"engagement","~","high_school","grade_to_engagement",-0.226,0.049,-4.6,0,-0.322,-0.13,-0.087
+"confidence","~","engagement","b",0.483,0.034,14.271,0,0.417,0.549,0.466
+"confidence","~","support","c",0.27,0.038,7.069,0,0.195,0.345,0.2
+"confidence","~","baseline_z","baseline_to_confidence",0.279,0.028,10.155,0,0.226,0.333,0.205
+"confidence","~","high_school","grade_to_confidence",0.037,0.051,0.738,0.461,-0.062,0.137,0.014
+"followup_score","~","confidence","d",3.172,0.158,20.12,0,2.863,3.481,0.317
+"followup_score","~","engagement","e",2.842,0.181,15.706,0,2.487,3.196,0.274
+"followup_score","~","support","f",1.637,0.193,8.465,0,1.258,2.016,0.121
+"followup_score","~","baseline_z","baseline_to_outcome",7.239,0.139,52.038,0,6.966,7.512,0.53
+"followup_score","~","high_school","grade_to_outcome",-0.942,0.255,-3.699,0,-1.442,-0.443,-0.035

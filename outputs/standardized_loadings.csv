@@ -1,0 +1,12 @@
+"lhs","rhs","est","se","pvalue","std.all"
+"support","support_1",0.801,0.016,0,0.827
+"support","support_2",0.726,0.017,0,0.757
+"support","support_3",0.68,0.017,0,0.714
+"support","support_4",0.668,0.018,0,0.686
+"engagement","engagement_1",0.77,0.016,0,0.814
+"engagement","engagement_2",0.711,0.016,0,0.767
+"engagement","engagement_3",0.684,0.017,0,0.718
+"engagement","engagement_4",0.634,0.018,0,0.678
+"confidence","confidence_1",0.775,0.016,0,0.851
+"confidence","confidence_2",0.7,0.017,0,0.757
+"confidence","confidence_3",0.633,0.018,0,0.664

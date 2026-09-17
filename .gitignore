@@ -5,3 +5,8 @@ artifacts/
 .Rproj.user/
 outputs/*.csv
 !outputs/README.md
+.r-library/
+renv/library/
+renv/staging/
+renv/cache/
+!outputs/*.csv
