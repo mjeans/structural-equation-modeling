@@ -9,6 +9,10 @@ sem_data <- read.csv(
   na.strings = c("", "NA")
 )
 
+# Exogenous covariates are fully observed and treated as fixed. Estimating the
+# variance of an exactly balanced binary covariate produced a degenerate robust
+# covariance direction in the prior fixed.x = FALSE specification.
+stopifnot(!anyNA(sem_data[c("baseline_z", "high_school")]))
 structural_fit <- sem(
   structural_model,
   data = sem_data,
@@ -16,7 +20,7 @@ structural_fit <- sem(
   missing = "fiml",
   meanstructure = TRUE,
   std.lv = TRUE,
-  fixed.x = FALSE
+  fixed.x = TRUE
 )
 
 if (!lavInspect(structural_fit, "converged")) {

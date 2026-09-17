@@ -19,6 +19,10 @@ The workflow separates that question into two stages:
 
 ## Verified reference results
 
+Read the [executed measurement and structural-model report](outputs/report.md), including standardized loading/path intervals, aggregate results, diagnostics, and limitations.
+
+![Standardized factor loadings and model-based confidence intervals](assets/loading-intervals.svg)
+
 GitHub Actions regenerates the complete 2,400-record dataset and executes every model and test. The validated reference run produced:
 
 | Analysis | CFI | TLI | RMSEA | SRMR |
@@ -83,10 +87,10 @@ outputs/      Documentation for reproducibly generated result tables
 
 ## Reproduce the analysis
 
-R and `lavaan` are the only requirements.
+The model uses R and `lavaan`; publication graphics also use `ggplot2` and `svglite`. Restore the versioned environment before running.
 
 ```bash
-install.packages("lavaan")
+Rscript scripts/restore_environment.R
 make all
 ```
 
@@ -97,10 +101,11 @@ Rscript scripts/01_generate_data.R
 Rscript scripts/02_measurement_models.R
 Rscript scripts/03_structural_model.R
 Rscript scripts/04_diagnostics.R
+Rscript scripts/05_publish_report.R
 Rscript tests/test_pipeline.R
 ```
 
-Generated record-level data, fitted model objects, and result tables are ignored by Git. The scripts regenerate them deterministically, and continuous integration executes the entire workflow on every pull request.
+Generated record-level data and fitted model objects are ignored by Git. Safe aggregate result tables, executed reports, and SVGs are committed. Continuous integration executes the entire workflow on every pull request.
 
 ## Interpretation boundary
 
@@ -109,3 +114,7 @@ The structural paths are conditional associations within a synthetic cross-secti
 See the [analysis plan](docs/analysis-plan.md), [model card](docs/model-card.md), [data dictionary](docs/data-dictionary.md), and [decision memo](docs/decision-memo.md).
 
 Built as a public portfolio demonstration by [Matthew Jeans, PhD](https://github.com/mjeans).
+
+## Reproducible environment
+
+Restore dependencies with `Rscript scripts/restore_environment.R` before running the analysis from the repository root. See [environment notes](docs/environment.md) and the committed `renv.lock`.

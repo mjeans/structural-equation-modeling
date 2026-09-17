@@ -1,0 +1,7 @@
+"lhs","op","rhs","label","est","se","z","pvalue","ci.lower","ci.upper","std.all"
+"support_to_confidence_indirect",":=","a*b","support_to_confidence_indirect",0.373,0.029,12.965,0,0.317,0.43,0.276
+"support_to_outcome_via_engagement",":=","a*e","support_to_outcome_via_engagement",2.196,0.159,13.815,0,1.884,2.507,0.162
+"support_to_outcome_via_confidence",":=","c*d","support_to_outcome_via_confidence",0.856,0.128,6.699,0,0.605,1.106,0.063
+"support_to_outcome_serial",":=","a*b*d","support_to_outcome_serial",1.184,0.1,11.842,0,0.988,1.38,0.088
+"support_to_outcome_total_indirect",":=","(a*e)+(c*d)+(a*b*d)","support_to_outcome_total_indirect",4.235,0.191,22.185,0,3.861,4.61,0.313
+"support_to_outcome_total",":=","f+(a*e)+(c*d)+(a*b*d)","support_to_outcome_total",5.872,0.189,31.04,0,5.502,6.243,0.434
